@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<section class="h-100 h-custom" style="background-color: #f5f5f5;">
+<div class="py-5 text-center">
+    <div class="container">
+    <img class="d-block mx-auto mb-4" src="https://icones.pro/wp-content/uploads/2021/04/symbole-apple-icone-logo-orange.png" alt="" width="200" height="200">
+    <h1>Питання-Відповідь</h1>
+<p class="lead"></p>
+    <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Чи надаєте ви гарантію на iPhone?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <p>Так, ми надаємо гарантію на всі продукти iPhone, які продаємо. Зазвичай гарантійний термін становить 1 рік. Додатково, ви можете придбати розширену гарантію для більш тривалого покриття.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-primary collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Чи приймаєте ви обмін старого iPhone при покупці нового?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        <p>Так, ми зазвичай приймаємо обмін старого iPhone при покупці нового. При обміні ми оцінюємо стан вашого старого пристрою та пропонуємо відповідну вартість обміну, яку ви можете використовувати для придбання нового iPhone.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn btn-primary collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Чи продаєте ви аксесуари для iPhone?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <p>Так, ми продаємо широкий асортимент аксесуарів для iPhone. Ви можете знайти чохли, захисні плівки, зарядні пристрої, навушники та багато іншого. Запрошуємо вас відвідати наш магазин або ознайомитися з нашим каталогом для отримання більш детальної інформації.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn btn-primary collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Чи є у вас опція розстрочки або фінансування для покупки iPhone?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+      <div class="card-body">
+        <p>Так, ми можемо запропонувати вам опції розстрочки або фінансування для покупки iPhone. Ми співпрацюємо з різними фінансовими установами, які надають такі послуги. Будь ласка, зверніться до нашого персоналу, щоб дізнатися більше про доступні вам варіанти.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+
+
+{% endblock %}

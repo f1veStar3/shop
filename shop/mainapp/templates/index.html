@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Elf Bar</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="https://icones.pro/wp-content/uploads/2021/04/symbole-apple-icone-logo-orange.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    </head>
+
+
+
+<header>
+<section class="h-100 h-custom " style="background-color: #f5f5f5;">
+
+  <div class="banner">
+	<div class="navigation-wrap bg-dark start-header start-style">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<nav class="navbar navbar-expand-md navbar-light">
+						<a class="navbar-brand" href="{% url 'base' %}" ><img src="{% static 'logo.png' %}" alt=""></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav ml-auto py-4 py-md-0">
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 ">
+                                  <a class="nav-link" href="/">Головна</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="{% url 'about' %}">Питання-Відповіді</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="{% url 'about_us' %}">Про нас</a>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Соц.мереі</a>
+                                    <div class="dropdown-menu">
+										<a class="dropdown-item text-white" target='_blank' href="">Telegram</a>
+										<a class="dropdown-item text-white" target='_blank' href="https://www.instagram.com/vasylmyklash_/">Instagram</a>
+									</div>
+								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 ">
+                                  	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Контакти</a>
+									<div class="dropdown-menu">
+										<a class="dropdown-item text-white" href="tel:+380966023600">+380966023600</a>
+										<a class="dropdown-item text-white" href="https://mail.google.com/mail/u/0/?fs=1&to=myklashv@gmail.com&su=Телефони&body=Text&tf=cm">myklashv@gmail.com</a>
+									</div>
+								</li>
+                                {% if request.user.is_authenticated %}
+                                <li class=" pl-4 pl-md-0 ml-0 ml-md-4">
+                                  <a class="btn btn-primary" href="{% url 'cart' %}" role="button"><i class="bi-cart-fill me-1"></i></a>
+                                  <a class="btn btn-primary" href="{% url 'logout' %}"role="button"><i class="bi bi-box-arrow-left"></i></a>
+                                </li>
+                                {% else %}
+                                <li class="pl-4 pl-md-0 ml-0 ml-md-4">
+                                  <a class="btn btn-primary" href="{% url 'login' %}" role="button"><i class="bi bi-person-circle"></i></a>
+                                  <a class="btn btn-primary" href="{% url 'register' %}" role="button"><i class="bi bi-box-arrow-in-right"></i></a>
+                                </li>
+                                {% endif %}
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+{% block content %}
+
+
+<div class="container mt-5">
+            {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+        {% endif %}
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <img class="rounded mx-auto d-block img-fluid" src="{% static 'iphone.jpg' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="rounded mx-auto d-block img-fluid" src="{% static '14.jpeg' %}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="rounded mx-auto d-block img-fluid" src="{% static '2.png' %}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only" class="text-secondary">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+
+<div class="container">
+
+<div class="d-flex justify-content-center">
+  {% if categories.has_previous %}
+  <button type="button" class="btn btn-default btn-sm">
+    <a href="?page={{ categories.previous_page_number }}"><img src="{% static '271220.png' %}" width="20" height="20" alt="попередня"></a>
+  </button>
+  {% endif %}
+{% for category in categories %}
+<div class="mx-3 category">
+  <a href="{{ category.get_absolute_url }} " class="nav-link">
+    <div class="d-flex flex-column align-items-center">
+      <img src="{{ category.image.url }}" class="img-fluid mb-2" width="100" height="100" alt="{{ category.name }}">
+      <h6 class="text-muted">{{ category.name }}</h6>
+    </div>
+  </a>
+</div>
+{% endfor %}
+  {% if categories.has_next %}
+<button type="button" class="btn btn-default btn-sm">
+  <a href="?page={{ categories.next_page_number }}"><img src="{% static 'right-arrow.png' %}" width="20" height="20" alt="наступна"></a>
+</button>
+  {% endif %}
+</div>
+
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">Популярні товари</h2>
+    </div>
+  </div>
+  <div class="row">
+          {% for product in products %}
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 category">
+              {% if product.sale == True  %}
+              <div class="badge bg-warning text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Знижка</div>
+              {% endif %}
+              {% if product.new == True  %}
+              <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; left: 0.5rem">Новинка</div>
+              {% endif %}
+              {% if request.user.is_authenticated %}
+              <a href="{% url 'add_to_cart' slug=product.slug %}"><img  src="{{ product.image.url }}" class='card-img-top' alt=""></a>
+              {% else %}
+              <a href="{% url 'register' %}"><img  src="{{ product.image.url }}" class='card-img-top' alt=""></a>
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a>{{ product.title }}</a>
+                </h5>
+                <p class="text-secondary">{{ product.description }}</p>
+              </div>
+              <div class="card-footer">
+
+                <div class="row">
+                  {% if product.sale == True  %}
+                  <div class="col">
+                    <h6 style="font-size: 80%;">{{ product.new_price }}грн</h6>
+                    <h6 style="font-size: 80%;" class="text-secondary"><s>{{ product.price }}</s>грн</h6>
+                  </div>
+                  {% else %}
+                  <div class="col">
+                    <h6 style="font-size: 80%;" >{{ product.price }}грн</h6>
+                  </div>
+                  {% endif %}
+                  <div class="col-5 text-right">
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'add_to_cart' slug=product.slug %}" class="btn btn-primary "><i  class="bi-cart-fill me-1"></i></a>
+                    {% else %}
+                    <a href="{% url 'register' %}" class="btn btn-primary mt-auto"><i  class="bi-cart-fill me-1"></i></a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+
+
+
+
+<footer class="bg-dark text-center text-lg-start mt-5">
+  <div class="container p-4">
+    <div class="row">
+     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <img class="rounded mx-auto d-block" src="{% static 'logo.png' %}" height='150' width="150" alt="First slide">
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase text-white">Контакти</h5>
+        <ul class="list-unstyled">
+          <a href="tel:+380966023600" class ='text-white'>+380966023600</a>
+          <li><a target='_blank' href="https://mail.google.com/mail/u/0/?fs=1&to=myklashv@gmail.com&su=Телефони&body=Text&tf=cm" class ='text-white'>myklashv@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase text-white">Посилання</h5>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'base' %}" class ='text-white'>Головна</a></li>
+          <li><a href="{% url 'about' %}" class ='text-white'>Питання-Відповідь</a></li>
+          <li><a href="{% url 'about_us' %}" class ='text-white'>Про нас</a></li>
+
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase text-white">Соцмережі</h5>
+        <ul class="list-unstyled">
+          <li><a target='_blank' href="https://www.instagram.com/vasylmyklash_/" class ='text-white'>Instagram</a></li>
+          <li><a target='_blank' href='/' class ='text-white'>Telegram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-top"></div>
+  <div class="bg-dark text-center text-white p-3">
+    © 2023 Всі права захищені.
+  </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</section>

@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center text-dark mt-5">Вхід</h2>
+        <div class="card my-5">
+
+          <form class="card-body cardbody-color p-lg-5" method="post">
+          {% csrf_token %}
+            <div class="text-center">
+              <img src="https://icones.pro/wp-content/uploads/2021/04/symbole-apple-icone-logo-orange.png"
+                width="200px" alt="profile">
+            </div>
+
+            <div class="mb-3">
+              {{ form | crispy }}
+            </div>
+
+            <div class="text-center"><button type="submit" class="btn btn-primary px-5 mb-5 w-100">Увійти</button></div>
+            <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
+              Registered? <a href="{% url 'register' %}" class="text-dark">Створити Аккаунт</a>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock content %}
