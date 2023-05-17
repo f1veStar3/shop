@@ -1,12 +1,12 @@
 
-getuseragent==0.0.7
-install==1.3.5
-mysqlclient==2.1.1
-Pillow==9.4.0
-psycopg2==2.9.6
-pytz==2023.3
-sqlparse==0.4.3
-typing_extensions==4.5.0
-tzdata==2023.3
-ua-parser==0.16.1
-user-agents==2.2.0
+pip install getuseragent==0.0.7
+pip install install==1.3.5
+pip install mysqlclient==2.1.1
+pip install Pillow==9.4.0
+pip install psycopg2==2.9.6
+pip install pytz==2023.3
+pip install sqlparse==0.4.3
+pip install typing_extensions==4.5.0
+pip install tzdata==2023.3
+pip install ua-parser==0.16.1
+pip install user-agents==2.2.0
